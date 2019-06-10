@@ -13,7 +13,7 @@
     'Get the mandatory request data from the request And do some validation checks on it
     'Test for "Reference" Is only for these examples
     Dim mandatoryFields = New Dictionary(Of String, String)() From {
-{"PAYGATE_ID", If(Regex.IsMatch(Request("PAYGATE_ID"), "^\d{9,12}$"), Request("PAYGATE_ID"), "INVALID ID")},
+{"PAYGATE_ID", If(Regex.IsMatch(Request("PAYGATE_ID"), "^\d{9,13}$"), Request("PAYGATE_ID"), "INVALID ID")},
 {"REFERENCE", If(Regex.IsMatch(Request("REFERENCE"), "^pgtest_\d{14}$"), Request("REFERENCE"), "INVALID REFERENCE")},
 {"AMOUNT", If(Regex.IsMatch(Request("AMOUNT"), "^\d*\.?\d{0,2}$"), Request("AMOUNT"), "INVALID AMOUNT")},
 {"CURRENCY", If(Regex.IsMatch(Request("CURRENCY"), "^[A-Z]{3}$"), Request("CURRENCY"), "INVALID CURRENCY")},
